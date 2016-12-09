@@ -7,9 +7,10 @@ import {
   View
 } from 'react-native';
 var lo = require('lodash');
-
+var Immutable = require('immutable');
 function foo(x: string, y: number): number {
-  lo.
+  var map1 = Immutable.Map({a:1, b:2, c:3});
+  var map2 = map1.set('b', 50);
   return x.length * y;
 }
 
@@ -19,7 +20,7 @@ export default class languageApp extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          {foo('react native',5).toString()}
+          {foo('react native', 7).toString()}
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
