@@ -1,22 +1,37 @@
 {
-	"name": "languageApp",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"react": "15.4.1",
-		"react-native": "0.39.1"
-	},
-	"devDependencies": {
-		"babel-jest": "17.0.2",
-		"babel-preset-react-native": "1.9.0",
-		"jest": "17.0.3",
-		"react-test-renderer": "15.4.1"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "languageApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest",
+	 "lint": "eslint ."
+  },
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "moment": "~2.13.0",
+    "react": "15.4.1",
+    "react-native": "0.39.1",
+    "react-native-linear-gradient": "~1.5.0",
+    "react-native-share": "^1.0.17",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0",
+    "redux-logger": "~2.6.1",
+    "redux-persist": "~3.2.2",
+    "redux-thunk": "^2.1.0",
+    "reselect": "^2.5.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "~6.1.0",
+    "babel-jest": "17.0.2",
+    "babel-polyfill": "~6.9.1",
+    "babel-preset-react-native": "1.9.0",
+    "eslint": "~2.13.1",
+    "eslint-plugin-react": "~5.2.2",
+    "jest": "17.0.3",
+    "react-test-renderer": "15.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
