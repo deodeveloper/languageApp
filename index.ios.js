@@ -1,9 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
+// @flow
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,12 +7,17 @@ import {
   View
 } from 'react-native';
 
+function foo(x: string, y: number): number {
+  return x.length * y;
+}
+
+
 export default class languageApp extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          {foo('react native',5).toString()}
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
