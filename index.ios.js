@@ -6,8 +6,10 @@ import {
   Text,
   View
 } from 'react-native';
+var lo = require('lodash');
 
 function foo(x: string, y: number): number {
+  lo.
   return x.length * y;
 }
 
