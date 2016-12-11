@@ -25,6 +25,9 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		6CDEB6213EC8430BA4E4946A /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96BD43B663264175A33968B7 /* libBVLinearGradient.a */; };
 		980299DF35924FE18FCB42AD /* libRNShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16E09FD1558E4B519F548BC6 /* libRNShare.a */; };
+		3B9A11BBE4E94E7C8B95AD96 /* libRealmReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6AB29FACB245C689D7AC4F /* libRealmReact.a */; };
+		1AB5D8A86CD5421AAC6F8D4A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A31A82B175654B18AF6AF0FA /* libc++.tbd */; };
+		A92B70B1CBF749309C3BA556 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C755ACC869144794847C4B66 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +151,10 @@
 		96BD43B663264175A33968B7 /* libBVLinearGradient.a */ = {isa = PBXFileReference; name = "libBVLinearGradient.a"; path = "libBVLinearGradient.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		215E6DCDCA134D6BAD4DFC49 /* RNShare.xcodeproj */ = {isa = PBXFileReference; name = "RNShare.xcodeproj"; path = "../node_modules/react-native-share/ios/RNShare.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		16E09FD1558E4B519F548BC6 /* libRNShare.a */ = {isa = PBXFileReference; name = "libRNShare.a"; path = "libRNShare.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		16903002494D47D0B0E841E6 /* RealmReact.xcodeproj */ = {isa = PBXFileReference; name = "RealmReact.xcodeproj"; path = "../node_modules/realm/react-native/ios/RealmReact.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		1B6AB29FACB245C689D7AC4F /* libRealmReact.a */ = {isa = PBXFileReference; name = "libRealmReact.a"; path = "libRealmReact.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		A31A82B175654B18AF6AF0FA /* libc++.tbd */ = {isa = PBXFileReference; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		C755ACC869144794847C4B66 /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +183,9 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				6CDEB6213EC8430BA4E4946A /* libBVLinearGradient.a in Frameworks */,
 				980299DF35924FE18FCB42AD /* libRNShare.a in Frameworks */,
+				3B9A11BBE4E94E7C8B95AD96 /* libRealmReact.a in Frameworks */,
+				1AB5D8A86CD5421AAC6F8D4A /* libc++.tbd in Frameworks */,
+				A92B70B1CBF749309C3BA556 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +320,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				1745F2DA7EA1428D9F7EC769 /* BVLinearGradient.xcodeproj */,
 				215E6DCDCA134D6BAD4DFC49 /* RNShare.xcodeproj */,
+				16903002494D47D0B0E841E6 /* RealmReact.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -329,6 +340,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* languageAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				C5039F00F57241FFBD4B8C6B /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -341,6 +353,16 @@
 				00E356EE1AD99517003FC87E /* languageAppTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C5039F00F57241FFBD4B8C6B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A31A82B175654B18AF6AF0FA /* libc++.tbd */,
+				C755ACC869144794847C4B66 /* libz.tbd */,
+			);
+			name = Frameworks;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -643,6 +665,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -659,6 +682,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/languageApp.app/languageApp";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -740,6 +764,7 @@
 					"$(SRCROOT)/../node_modules/react-native/ReactCommon/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -782,6 +807,7 @@
 					"$(SRCROOT)/../node_modules/react-native/ReactCommon/**",
 					"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient",
 					"$(SRCROOT)/../node_modules/react-native-share/ios",
+					"$(SRCROOT)/../node_modules/realm/src/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

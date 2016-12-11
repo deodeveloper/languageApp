@@ -6,32 +6,33 @@ import {
   Text,
   View
 } from 'react-native';
-var lo = require('lodash');
-var Immutable = require('immutable');
 function foo(x: string, y: number): number {
-  var map1 = Immutable.Map({a:1, b:2, c:3});
-  var map2 = map1.set('b', 50);
   return x.length * y;
 }
-
+import Realm from 'realm';
 
 export default class languageApp extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          {foo('react native', 7).toString()}
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
+ render() {
+   let realm = new Realm({
+     schema: [{name: 'Dog', properties: {name: 'string'}}]
+   });
+
+   realm.write(() => {
+     realm.create('Dog', {name: 'Rex'});
+   });
+
+   return (
+     <View style={styles.container}>
+       <Text style={styles.welcome}>
+           Count of Dogs in Realm: {realm.objects('Dog').length}
+       </Text>
+       <Text style={styles.instructions}>
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
-      </View>
-    );
-  }
+     </View>
+   );
+ }
 }
 
 const styles = StyleSheet.create({
