@@ -8,6 +8,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "firebase": "^3.6.3",
     "immutable": "^3.8.1",
     "lodash": "^4.17.2",
@@ -20,12 +21,15 @@
     "react-redux": "^4.4.6",
     "realm": "^0.15.0",
     "redux": "^3.6.0",
+    "redux-analytics": "^0.3.1",
     "redux-logger": "~2.6.1",
     "redux-persist": "~3.2.2",
+    "redux-saga": "^0.13.0",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.4"
   },
   "devDependencies": {
+    "axios-mock-adapter": "^1.7.1",
     "babel-eslint": "~6.1.0",
     "babel-jest": "17.0.2",
     "babel-polyfill": "~6.9.1",
