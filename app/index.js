@@ -1,34 +1,52 @@
-import React from 'react';
-import Meteor, { createContainer } from 'react-native-meteor';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Tabs from 'react-native-tabs';
 
-import LoggedOut from './layouts/LoggedOut';
-import LoggedIn from './layouts/LoggedIn';
-import Loading from './components/Loading';
-import settings from './config/settings';
-
-Meteor.connect(settings.METEOR_URL);
-
-const RNApp = (props) => {
-  const { status, user, loggingIn } = props;
-
-  if (status.connected === false || loggingIn) {
-    return <Loading />;
-  } else if (user !== null) {
-    return <LoggedIn />;
+class Example extends Component {
+  constructor(props){
+    super(props);
+    this.state = {};
   }
-  return <LoggedOut />;
-};
+  render() {
+    var self = this;
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          Selected page: {this.state.page}
+        </Text>
+        <Tabs selected="second" style={{backgroundColor:'white'}}
+              onSelect={function(el){self.setState({page: el.props.name});return {style:{color:'red'}}}}>
+            <Text name="first">First</Text>
+            <Text name="second">Second</Text>
+            <Text name="third">Third</Text>
+            <Text name="fourth">Fourth</Text>
+            <Text name="fifth">Fifth</Text>
+        </Tabs>
+      </View>
+    );
+  }
+}
 
-RNApp.propTypes = {
-  status: React.PropTypes.object,
-  user: React.PropTypes.object,
-  loggingIn: React.PropTypes.bool,
-};
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
+  },
+});
 
-export default createContainer(() => {
-  return {
-    status: Meteor.status(),
-    user: Meteor.user(),
-    loggingIn: Meteor.loggingIn(),
-  };
-}, RNApp);
+export default Example;

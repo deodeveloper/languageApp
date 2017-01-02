@@ -126,8 +126,9 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-i18n')
+    compile project(':react-native-vector-icons')
     compile project(':realm')
+    compile project(':react-native-i18n')
     compile project(':react-native-share')
     compile project(':react-native-linear-gradient')
     compile fileTree(dir: "libs", include: ["*.jar"])

@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import { View, TextInput } from 'react-native';
 import styles from './styles';
@@ -9,7 +10,7 @@ const GenericTextInput = (props) => {
       <TextInput
         style={styles.input}
         autoCapitalize="none"
-        autoCorrect={false}
+        aut oCorrect={false}
         {...props}
       />
     </View>
