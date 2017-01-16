@@ -2,7 +2,8 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "plugins": [
-    "react"
+    "react",
+    "react-native"
   ],
   "ecmaFeatures": {
     "jsx": true
@@ -50,5 +51,11 @@
     "ReactElement": false,
     "ReactClass": false,
     "Class": false
+  },
+  "rules": {
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2
   }
 }
