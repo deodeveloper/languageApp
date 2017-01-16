@@ -1,52 +1,77 @@
+// @flow
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Tabs from 'react-native-tabs';
+import { Text } from 'react-native';
+import { Router, Scene } from 'react-native-router-flux';
 
-class Example extends Component {
-  constructor(props){
-    super(props);
-    this.state = {};
-  }
-  render() {
-    var self = this;
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          Selected page: {this.state.page}
-        </Text>
-        <Tabs selected="second" style={{backgroundColor:'white'}}
-              onSelect={function(el){self.setState({page: el.props.name});return {style:{color:'red'}}}}>
-            <Text name="first">First</Text>
-            <Text name="second">Second</Text>
-            <Text name="third">Third</Text>
-            <Text name="fourth">Fourth</Text>
-            <Text name="fifth">Fifth</Text>
-        </Tabs>
-      </View>
-    );
-  }
-}
+// New Imports
+import ScarletScreen from './screen/ScarletScreen';
+import BlueScreen from './screen/BlueScreen';
+import MaizeScreen from './screen/MaizeScreen';
+import GoldScreen from './screen/GoldScreen';
+import BlackScreen from './screen/BlackScreen';
+import MyComponent from './screen/wordlist/index';
 
-var styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+// Simple component to render something in place of icon
+const TabIcon = ({ selected, title }) => {
+  return (
+    <Text style={{color: selected ? 'red' :'black'}}>{title}</Text>
+  );
+};
+
+const Example = () => {
+  return (
+    <Router>
+      <Scene key="root">
+        {/* Tab Container */}
+        <Scene
+          key="tabbar"
+          tabs={true}
+          tabBarStyle={{ backgroundColor: '#FFFFFF' }}
+        >
+          {/* Tab and it's scenes */}
+          <Scene key="osu" title="OSU" icon={TabIcon}>
+            <Scene key="scarlet"
+              component={ScarletScreen}
+              title="Scarlet"
+            />
+            <Scene
+              key="gray"
+              component={MyComponent}
+              title=" Word List"
+            />
+          </Scene>
+
+          {/* Tab and it's scenes */}
+          <Scene key="um" title="UM" icon={TabIcon}>
+            <Scene
+              key="blue"
+              component={BlueScreen}
+              title="Blue"
+            />
+            <Scene
+              key="maize"
+              component={MaizeScreen}
+              title="Maize"
+            />
+          </Scene>
+
+          {/* Tab and it's scenes */}
+          <Scene key="vu" title="VU" icon={TabIcon}>
+            <Scene
+              key="gold"
+              component={GoldScreen}
+              title="Gold"
+            />
+            <Scene
+              key="black"
+              component={BlackScreen}
+              title="Black"
+            />
+          </Scene>
+        </Scene>
+      </Scene>
+    </Router>
+  );
+};
 
 export default Example;
